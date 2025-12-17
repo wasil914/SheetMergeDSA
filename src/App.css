@@ -1,0 +1,224 @@
+/* App Heading */
+.app-heading {
+  font-weight: 800;
+  font-size: 52px;
+  background: linear-gradient(90deg, #ff6b6b, #f94d6a, #f3722c, #ffba08);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s infinite alternate;
+}
+
+@keyframes gradientShift {
+  from { background-position: left; }
+  to { background-position: right; }
+}
+
+/* App container */
+.App {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #333333;
+}
+
+/* Dark mode */
+.dark {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: #f8f9fa;
+}
+
+/* Responsive headings */
+@media screen and (max-width: 480px) {
+  .app-heading {
+    font-size: 32px;
+  }
+  .app-heading2 {
+    font-size: 22px;
+  }
+}
+
+/* Banner links */
+.banner a {
+  text-decoration: none;
+  color: #ff477e;
+  font-weight: 700;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: large;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.banner a:hover {
+  color: #ff9a76;
+  transform: scale(1.1);
+}
+
+/* Emoji fix */
+.emojiFix {
+  font-weight: 100 !important;
+}
+
+/* Theme toggle button at top-right */
+.theme-toggle-btn {
+  position: fixed;      
+  top: 15px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.2);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark .theme-toggle-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollable container */
+.container-custom {
+  overflow-y: scroll;
+  height: 70vh;
+}
+
+.container::-webkit-scrollbar {
+  width: 5px;
+}
+.container::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+.container::-webkit-scrollbar-thumb {
+  background-color: rgba(54, 54, 54, 0.466);
+  border-radius: 10px;
+  border: 3px solid rgba(78, 78, 78, 0.452);
+}
+
+/* Topic / Question cards */
+.inprogress-card {
+  background-color: #aad6b9;
+  border-radius: 15px;
+  height: 90%;
+  transition: all 0.3s ease;
+}
+
+.notstarted-card {
+  background-color: #aad0f6;
+  border-radius: 15px;
+  height: 90%;
+  transition: all 0.3s ease;
+}
+
+.promotional-card {
+  background: #ee0979;
+  background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);
+  background: linear-gradient(to right, #ff6a00, #ee0979);
+  background-size: 200% 200%;
+  border-radius: 15px;
+  height: 90%;
+  animation: gradient 5s ease infinite;
+}
+
+.promotional-heading,
+.promotional-subtext {
+  color: #fff;
+  text-align: center;
+}
+
+.promotional-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.promotional-subtext {
+  font-weight: 500;
+}
+
+.promotional-cta {
+  color: #4f4f4f;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Dark mode text overrides */
+.dark .topicName,
+.dark .totalQuestion,
+.dark .percentDone,
+.dark .promotional-heading,
+.dark .promotional-subtext {
+  color: #ffffff;
+}
+
+.dark .note-section,
+.dark .question-title {
+  background-color: rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+
+/* Text styles */
+.topicName {
+  color: #333333;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.totalQuestion,
+.percentDone {
+  color: #4f4f4f;
+  font-weight: 700;
+}
+
+/* Hover effect */
+.hvr-grow {
+  vertical-align: middle;
+  transform: perspective(0.5px) translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.05);
+}
+
+/* Gradient animation */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive layout */
+.container-custom2 {
+  width: 40vw;
+  min-width: 290px !important;
+}
+
+@media screen and (max-width: 1199px) {
+  .topic-input-container { max-width: var(--table-lg-width); }
+}
+@media screen and (max-width: 991px) {
+  .topic-input-container { max-width: var(--table-md-width); }
+}
+@media screen and (max-width: 767px) {
+  .topic-input-container {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: var(--table-sm-width);
+    margin-bottom: 10px;
+  }
+  .container-custom2 { width: 100% !important; }
+}
